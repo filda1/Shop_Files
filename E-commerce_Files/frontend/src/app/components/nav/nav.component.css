@@ -1,0 +1,73 @@
+::placeholder {
+    color:white;
+	font-size:12px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 216px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  padding-right:123px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.custom-search-form{
+
+	margin-bottom:5px;
+}
+
+
+
+#custom-search-input {
+    margin:0;
+    margin-top: 0px;
+    padding: 0;
+	align:center;
+
+
+}
+ 
+#custom-search-input .search-query {
+    width:100%;
+    padding-right: 3px;
+    padding-left: 32px;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius:1;
+	
+}
+ 
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 4px 5px;
+    margin-top: 6px;
+    padding-left: 7px;
+    position: absolute;
+    left:0;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color:#ffff;
+    cursor: unset;
+    z-index: 2;
+}
+ 
+.search-query:focus{
+    z-index: 0;   
+}
