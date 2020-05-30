@@ -13,6 +13,7 @@ import { InfoComponent } from './components/info/info.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './auth.guard';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { SearchproductsComponent } from './components/product/searchproducts/searchproducts.component';
 
 
 const routes: Routes = [
@@ -30,9 +31,7 @@ const routes: Routes = [
   {path:'success',component:SuccessComponent},
   {path:'info',component:InfoComponent},
   {path:'home',component:HomeComponent,canActivate: [AuthGuard]},
-
-  
-
+  {path:'searchproducts/:id',component:SearchproductsComponent},
 
 ];
 

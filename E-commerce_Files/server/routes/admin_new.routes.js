@@ -57,7 +57,7 @@ const CategoryController = require('../controllers/category.controller');
     router.get('/deletecategory', isAuthenticated, CategoryController.delete);
 
     /////////////////////// Search /////////////////////
-    router.get('/searchAll/:phase', ProductController.searchAll);
+    router.get('/searchAll/:id', ProductController.searchAll);
 
 
 

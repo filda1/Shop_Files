@@ -21,9 +21,9 @@
 	    <div class="col-12" >
     	    <div id="custom-search-input" style="padding-left:38px;padding-right:23px">
                 <div class="input-group">
-                    <input type="text" class="search-query form-control" placeholder="Search Item" style="background-color:#044ffc;border:0;color:white"/>
+                    <input type="text" class="search-query form-control"  name="varUrl" [(ngModel)]="varUrl" placeholder="Search Item" style="background-color:#044ffc;border:0;color:white"/>
                     <span class="input-group-btn">
-                        <button type="button" disabled >
+                        <button type="button"  routerLink="/searchproducts/{{ varUrl }}" routerLinkActive="active">
                             <span class="fa fa-search"></span>
                         </button>
                     </span>

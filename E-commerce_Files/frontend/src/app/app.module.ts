@@ -37,6 +37,7 @@ import { TokenInterceptor1Service } from './services/token-interceptor1.service'
 import { HeadadminComponent } from './components/headadmin/headadmin.component';
 import { FilterPipe } from './filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SearchproductsComponent } from './components/product/searchproducts/searchproducts.component';
 
 
 
@@ -64,6 +65,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HelpComponent,
     HeadadminComponent,
     FilterPipe,
+    SearchproductsComponent,
 
    
     

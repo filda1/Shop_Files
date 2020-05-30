@@ -20,7 +20,7 @@ import { UserService } from '../../services/user.service';
 export class NavComponent implements OnInit {
 
 
-  
+  varUrl ='';
 
   constructor(private _router:Router,public userService: UserService) { }
 

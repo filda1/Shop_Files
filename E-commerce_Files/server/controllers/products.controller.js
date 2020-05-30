@@ -15,8 +15,9 @@ const Category = require('../models/category');
 
 
 ProductController.searchAll = async (req, res) => {
-  const { phase } = req.params;
-  const products = await Product.find({ product:  phase } );
+  const { id } = req.params; //Formato: Pdf.
+  //const products = await Product.find({ description: id } );
+const products = await Product.find({ product:/id/ });     // ===========> LIKE
   res.json(products );
 };
 
