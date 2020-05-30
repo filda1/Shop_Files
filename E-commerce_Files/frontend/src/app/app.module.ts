@@ -36,6 +36,7 @@ import { FormsModule } from '@angular/forms'
 import { TokenInterceptor1Service } from './services/token-interceptor1.service';
 import { HeadadminComponent } from './components/headadmin/headadmin.component';
 import { FilterPipe } from './filter.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -75,7 +76,8 @@ import { FilterPipe } from './filter.pipe';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,  
-    HttpClientModule,  
+    HttpClientModule, 
+    NgxPaginationModule , 
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [

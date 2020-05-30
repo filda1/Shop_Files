@@ -12,7 +12,8 @@ export class FeatureComponent implements OnInit {
   products = [];
 
   filterPost='';
-
+  pageActual: number = 1;
+  
   constructor(private featureService: FeatureService) {
     //console.log('ola') ;
     //console.log(this.filterPost);
@@ -31,7 +32,7 @@ export class FeatureComponent implements OnInit {
 
   }
 
-  setValue() { this.filterPost = 'cisne'; }
+  setValue(a) { this.filterPost = a; }
 
 
 }

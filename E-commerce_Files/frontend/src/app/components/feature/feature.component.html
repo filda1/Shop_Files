@@ -4,24 +4,12 @@
   link to user component
 </a> -->
   
-  
-     
-
-
-
-
-
 
 <div class="col">
 
 
-
-
    <!-- <input type="text" class="form-control" name="filterPost" placeholder="Search..." [(ngModel)]="filterPost"> -->
       
-        <a  (click)="setValue()"  name="filterPost" placeholder="Search...">
-          
-           </a>
 
   <div class="row" style="padding-left:25px;padding-right:25px" > 
 
@@ -45,26 +33,26 @@
            <div class="row"  style="width:830px">
               <div class="col-sm-2" style="padding-left:45px;padding-right:147px">
               <br>
-               <a class="dropdown-item azulclaro" href="#">All Category </a>
+               <a class="dropdown-item azulclaro" (click)="setValue('All Category')" style="cursor:pointer;color:#007fff;">All Category </a>
                <br>
-               <a class="dropdown-item grisoscuro" href=""  >3D Printing</a>
-               <a class="dropdown-item grisclaro" href="#">3D Accssories </a>
-               <a class="dropdown-item grisclaro" href="#">3D Extruders </a>
-               <a class="dropdown-item grisclaro" href="#">3D Parts </a>
-               <a class="dropdown-item grisclaro" href="#">3D Printers </a>
+               <a class="dropdown-item grisoscuro" (click)="setValue('3D Printing')" style="cursor: pointer;color:#404440;" >3D Printing</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('3D Accssories')" style="cursor: pointer;">3D Accssories </a>
+               <a class="dropdown-item grisclaro" (click)="setValue('3D Extruders')" style="cursor: pointer;">3D Extruders </a>
+               <a class="dropdown-item grisclaro" (click)="setValue('3D Parts')" style="cursor: pointer;">3D Parts </a>
+               <a class="dropdown-item grisclaro" (click)="setValue('3D Printers')" style="cursor: pointer;">3D Printers </a>
                <br>
                
                <br>
-               <a class="dropdown-item grisoscuro" href="#">Models</a>
-               <a class="dropdown-item grisclaro" href="#">Animals</a>
-               <a class="dropdown-item grisclaro" href="#">Buildings & Structures</a>
-               <a class="dropdown-item grisclaro" href="#">Creatures</a>
-               <a class="dropdown-item grisclaro" href="#">Food & Drink</a>
-               <a class="dropdown-item grisclaro" href="#">Model Furniture</a>
-                <a class="dropdown-item grisclaro" href="#">Model Robots</a>
-               <a class="dropdown-item grisclaro" href="#">People</a>
-               <a class="dropdown-item grisclaro" href="#">Props</a>
-               <a class="dropdown-item grisclaro" href="#">Vehicles</a>
+               <a class="dropdown-item grisoscuro" (click)="setValue('Models')" style="cursor: pointer;color:#404440;">Models</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Animals')" style="cursor: pointer;">Animals</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Buildings & Structures')" style="cursor: pointer;">Buildings & Structures</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Creatures')" style="cursor: pointer;">Creatures</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Food & Drink')" style="cursor: pointer;">Food & Drink</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Model Furniture')" style="cursor: pointer;">Model Furniture</a>
+                <a class="dropdown-item grisclaro" (click)="setValue('Model Robots')" style="cursor: pointer;">Model Robots</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('People')" style="cursor: pointer;">People</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Props')" style="cursor: pointer;">Props</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Vehicles')" style="cursor: pointer;">Vehicles</a>
               
               </div>
              
@@ -72,22 +60,22 @@
                <div class="col-sm-2">
 
                <br>
-                <a class="dropdown-item grisoscuro" href="#">Fashion </a>
-               <a class="dropdown-item grisclaro" href="#">Accessories</a>
-               <a class="dropdown-item grisclaro" href="#">Bracelets </a>
-               <a class="dropdown-item grisclaro" href="#">Costume</a>
-               <a class="dropdown-item grisclaro" href="#">Earrings</a>
-               <a class="dropdown-item grisclaro" href="#">Glasses</a>
-               <a class="dropdown-item grisclaro" href="#">Jewelry</a>
-               <a class="dropdown-item grisclaro" href="#">Keychains</a>
-               <a class="dropdown-item grisclaro" href="#">Rings</a>
+                <a class="dropdown-item grisoscuro" (click)="setValue('Fashion')" style="cursor: pointer;color:#404440;">Fashion </a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Accessories')" style="cursor: pointer;">Accessories</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Bracelets')" style="cursor: pointer;">Bracelets </a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Costume')" style="cursor: pointer;">Costume</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Earrings')" style="cursor: pointer;">Earrings</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Glasses')" style="cursor: pointer;">Glasses</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Jewelry')" style="cursor: pointer;">Jewelry</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Keychains')" style="cursor: pointer;">Keychains</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Rings')" style="cursor: pointer;">Rings</a>
                <br>
 
                <br>
-               <a class="dropdown-item grisoscuro" href="#">Tools</a>
-               <a class="dropdown-item grisclaro" href="#">Hand Tools</a>
-               <a class="dropdown-item grisclaro" href="#">Machine Tools</a>
-               <a class="dropdown-item grisclaro" href="#">Tool Holders & boxes</a> 
+               <a class="dropdown-item grisoscuro" (click)="setValue('Tools')" style="cursor: pointer;color:#404440;">Tools</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Hand Tools')" style="cursor: pointer;">Hand Tools</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Machine Tools')" style="cursor: pointer;">Machine Tools</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Tool Holders & boxes')" style="cursor: pointer;">Tool Holders & boxes</a> 
                 <br>
 
                 <br>
@@ -96,72 +84,72 @@
 
                <div class="col-sm-2">
                <br>
-               <a class="dropdown-item grisoscuro" href="#">Hobby</a>
-               <a class="dropdown-item grisclaro" href="#">Automotive</a>
-               <a class="dropdown-item grisclaro" href="#">DIY </a>
-               <a class="dropdown-item grisclaro" href="#">Electronics</a>
-               <a class="dropdown-item grisclaro" href="#">Music</a>
-               <a class="dropdown-item grisclaro" href="#">R/C Vehicles</a>
-               <a class="dropdown-item grisclaro" href="#">Robotics</a>
-               <a class="dropdown-item grisclaro" href="#">Sport & Outdoors</a>
+               <a class="dropdown-item grisoscuro" (click)="setValue('Hobby')" style="cursor: pointer;color:#404440;">Hobby</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Automotive')" style="cursor: pointer;">Automotive</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('DIY')" style="cursor: pointer;">DIY</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Electronics')" style="cursor: pointer;">Electronics</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Music')" style="cursor: pointer;">Music</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('R/C Vehicles')" style="cursor: pointer;">R/C Vehicles</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Robotics')" style="cursor: pointer;">Robotics</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Sport & Outdoors')" style="cursor: pointer;">Sport & Outdoors</a>
                <br>
                <br>
 
-               <a class="dropdown-item grisoscuro" href="#"> Gadgets</a>
-               <a class="dropdown-item grisclaro" href="#">Audio</a>
-               <a class="dropdown-item grisclaro" href="#">Camera </a>
-               <a class="dropdown-item grisclaro" href="#">Computer</a>
-               <a class="dropdown-item grisclaro" href="#">Tablet</a>
-               <a class="dropdown-item grisclaro" href="#">Video Games</a> 
+               <a class="dropdown-item grisoscuro" (click)="setValue('Gadgets')" style="cursor: pointer;color:#404440;"> Gadgets</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Audio')" style="cursor: pointer;">Audio</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Camera')" style="cursor: pointer;">Camera </a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Computer')" style="cursor: pointer;">Computer</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Tablet')" style="cursor: pointer;">Tablet</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Video Games')" style="cursor: pointer;">Video Games</a> 
               </div>
 
                
                <div class="col-sm-2" >
                <br>
-               <a class="dropdown-item grisoscuro" href="#">Learning</a>
-               <a class="dropdown-item grisclaro" href="#">Biology</a>
-               <a class="dropdown-item grisclaro" href="#">Engineering</a>
-               <a class="dropdown-item grisclaro" href="#">Math</a>
-               <a class="dropdown-item grisclaro" href="#">Physics & Astronomy</a>
-               <a class="dropdown-item grisclaro" href="#">R/C Vehicles</a>
+               <a class="dropdown-item grisoscuro" (click)="setValue('Learning')" style="cursor: pointer;color:#404440;">Learning</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Biology')" style="cursor: pointer;">Biology</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Engineering')" style="cursor: pointer;">Engineering</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Math')" style="cursor: pointer;">Math</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Physics & Astronomy')" style="cursor: pointer;">Physics & Astronomy</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('R/C Vehicles')" style="cursor: pointer;">R/C Vehicles</a>
               
                <br>
                <br>
                <br>
-               <a class="dropdown-item grisoscuro" href="#">Household</a>
-               <a class="dropdown-item grisclaro" href="#">Bathroom</a>
-               <a class="dropdown-item grisclaro" href="#">Decor</a>
-               <a class="dropdown-item grisclaro" href="#">Household Supplies</a>
-               <a class="dropdown-item grisclaro" href="#">Kitchen & Dining</a>
-               <a class="dropdown-item grisclaro" href="#">Office Organization</a>
-                <a class="dropdown-item grisclaro" href="#">Outdoor & Garden</a>
-               <a class="dropdown-item grisclaro" href="#">Pets</a>
+               <a class="dropdown-item grisoscuro" (click)="setValue('Household')" style="cursor: pointer;color:#404440;">Household</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Bathroom')" style="cursor: pointer;">Bathroom</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Decor')" style="cursor: pointer;">Decor</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Household Supplies')" style="cursor: pointer;">Household Supplies</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Kitchen & Dining')" style="cursor: pointer;">Kitchen & Dining</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Office Organization')" style="cursor: pointer;">Office Organization</a>
+                <a class="dropdown-item grisclaro" (click)="setValue('Outdoor & Garden')" style="cursor: pointer;">Outdoor & Garden</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Pets')" style="cursor: pointer;">Pets</a>
               </div>
 
               <br>
               <div class="col-sm-2" style="padding-left:28px">
               <br>
-                 <a class="dropdown-item grisoscuro" href="#">Art</a>
-               <a class="dropdown-item grisclaro" href="#">2D Art </a>
-               <a class="dropdown-item grisclaro" href="#">Art Tools</a>
-               <a class="dropdown-item grisclaro" href="#">Coins & Badges </a>
-               <a class="dropdown-item grisclaro" href="#">Interactive Art </a>
-                <a class="dropdown-item grisclaro" href="#">Math Art</a>
-               <a class="dropdown-item grisclaro" href="#">Scans & Replicas</a>
-               <a class="dropdown-item grisclaro" href="#">Sculptures</a>
-               <a class="dropdown-item grisclaro" href="#">Signs & Logos </a>
+                 <a class="dropdown-item grisoscuro" (click)="setValue('Art')" style="cursor: pointer;color:#404440;">Art</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('2D Art')" style="cursor: pointer;">2D Art </a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Art Tools')" style="cursor: pointer;">Art Tools</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Coins & Badges ')" style="cursor: pointer;">Coins & Badges </a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Interactive Art ')" style="cursor: pointer;">Interactive Art </a>
+                <a class="dropdown-item grisclaro" (click)="setValue('Math Art')" style="cursor: pointer;">Math Art</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Scans & Replicas')" style="cursor: pointer;">Scans & Replicas</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Sculptures')" style="cursor: pointer;">Sculptures</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Signs & Logos ')" style="cursor: pointer;">Signs & Logos </a>
 
 
                  <br>
-               <a class="dropdown-item grisoscuro" href="#">Toys & Games</a>
-               <a class="dropdown-item grisclaro" href="#">Chess</a>
-               <a class="dropdown-item grisclaro" href="#">Construction Toys</a>
-               <a class="dropdown-item grisclaro" href="#">Dice</a>
-               <a class="dropdown-item grisclaro" href="#">Games</a>
-               <a class="dropdown-item grisclaro" href="#">Mechanical Toys</a>
-               <a class="dropdown-item grisclaro" href="#">Playsets</a>
-               <a class="dropdown-item grisclaro" href="#">Puzzles</a>
-               <a class="dropdown-item grisclaro" href="#">T/G Accessories</a> 
+               <a class="dropdown-item grisoscuro" (click)="setValue('Toys & Games')" style="cursor: pointer;color:#404440;">Toys & Games</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Chess')" style="cursor: pointer;">Chess</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Construction Toys')" style="cursor: pointer;">Construction Toys</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Dice')" style="cursor: pointer;">Dice</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Games')" style="cursor: pointer;">Games</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Mechanical Toys')" style="cursor: pointer;">Mechanical Toys</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Playsets')" style="cursor: pointer;">Playsets</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Puzzles')" style="cursor: pointer;">Puzzles</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('T/G Accessories')" style="cursor: pointer;">T/G Accessories</a> 
               </div>
            </div>
           </div>
@@ -174,15 +162,15 @@
         <div class="custom-select" id="dropdownMenuButton" data-toggle="dropdown" style="height:32px" >
          <label style="color:gray;font-weight:400;font-size:14px">Type of File</label>
          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="border-color:#044ffc;">
-              <a class="dropdown-item grisclaro" href="#" style="font-size:13px">DXF </a>
-              <a class="dropdown-item grisclaro" href="#" style="font-size:13px">CDR</a>
-              <a class="dropdown-item grisclaro" href="#" style="font-size:13px">LASER CUT</a>
-              <a class="dropdown-item grisclaro" href="#" style="font-size:13px">WOODWORKING PLANS</a>
-              <a class="dropdown-item grisclaro" href="#" style="font-size:13px">VECTOR</a>
-              <a class="dropdown-item grisclaro" href="#" style="font-size:13px">PDF</a>
-              <a class="dropdown-item  grisclaro" href="#" style="font-size:13px">BMP </a>
-              <a class="dropdown-item grisclaro" href="#" style="font-size:13px">DWG</a>
-              <a class="dropdown-item grisclaro" href="#" style="font-size:13px">STL</a>
+              <a class="dropdown-item grisclaro" (click)="setValue('DXF')" style="font-size:13px;cursor: pointer;color: #848a84;">DXF </a>
+              <a class="dropdown-item grisclaro" (click)="setValue('CDR')" style="font-size:13px;cursor: pointer;color: #848a84;">CDR</a>
+              <a class="dropdown-item grisclaro" (click)="setValue('LASER CUT')" style="font-size:13px;cursor: pointer;color: #848a84;">LASER CUT</a>
+              <a class="dropdown-item grisclaro" (click)="setValue('WOODWORKING PLANS')" style="font-size:13px;cursor: pointer;color: #848a84;">WOODWORKING PLANS</a>
+              <a class="dropdown-item grisclaro" (click)="setValue('VECTOR')" style="font-size:13px;cursor: pointer;color: #848a84;">VECTOR</a>
+              <a class="dropdown-item grisclaro" (click)="setValue('PDF')" style="font-size:13px;cursor: pointer;color: #848a84;">PDF</a>
+              <a class="dropdown-item  grisclaro" (click)="setValue('BMP')" style="font-size:13px;cursor: pointer;color: #848a84;">BMP </a>
+              <a class="dropdown-item grisclaro" (click)="setValue('DWG')" style="font-size:13px;cursor: pointer;color: #848a84;">DWG</a>
+              <a class="dropdown-item grisclaro" (click)="setValue('STL')" style="font-size:13px;cursor: pointer;color: #848a84;">STL</a>
           </div>
         </div>
      </div>
@@ -192,23 +180,21 @@
         <div class="custom-select" id="dropdownMenuButton" data-toggle="dropdown" style="height:32px" >
          <label style="color:gray;font-weight:400;font-size:14px">Popular This Year</label>
          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="border-color:#044ffc;">
-              <a class="dropdown-item grisclaro" href="#">Popular last 7 Days</a>
-              <a class="dropdown-item grisclaro" href="#">Popular last 30 Days</a>
-              <a class="dropdown-item grisclaro" href="#">Popular This Year</a>
-               <a class="dropdown-item grisclaro" href="#">Popular All Time</a>
-              <a class="dropdown-item grisclaro" href="#">Newest</a>
-              <a class="dropdown-item grisclaro" href="#">Most Makes</a>
+              <a class="dropdown-item grisclaro" (click)="setValue('Popular last 7 Days')" style="cursor: pointer;color: #848a84;">Popular last 7 Days</a>
+              <a class="dropdown-item grisclaro" (click)="setValue('Popular last 30 Days')" style="cursor: pointer;color: #848a84;">Popular last 30 Days</a>
+              <a class="dropdown-item grisclaro" (click)="setValue('Popular This Year')" style="cursor: pointer;color: #848a84;">Popular This Year</a>
+               <a class="dropdown-item grisclaro" (click)="setValue('Popular All Time')" style="cursor: pointer;color: #848a84;">Popular All Time</a>
+              <a class="dropdown-item grisclaro" (click)="setValue('Newest')" style="cursor: pointer;color: #848a84;">Newest</a>
+              <a class="dropdown-item grisclaro" (click)="setValue('Most Makes')" style="cursor: pointer;color: #848a84;">Most Makes</a>
 
           </div>
         </div>
         <div style="height:7px"></div>
      </div>
-     
-
-     
+      
 
   <!--Card 1-->
-     <div class="col-md-3" style="padding-bottom:18px" *ngFor="let product of products | filter:filterPost">
+     <div class="col-md-3" style="padding-bottom:18px" *ngFor="let product of products | filter:filterPost | paginate: {itemsPerPage: 16, currentPage: pageActual}">
          <div class="card" style="height: 341px;">
           <div class="product">
                     <div>
@@ -216,6 +202,7 @@
                     <label style="color:Gray;padding-left: 4%;padding-top:0px">
                     <a style="cursor: pointer;font-size:14px">
                     <span>{{ product.product}} , 35€</span> 
+                    <!--  <span style="visibility:hidden">{{ product.product}} , 35€</span>  -->        
                      </a>
                     </label>
                    
@@ -265,9 +252,14 @@
                       </div>                                    
                   </div>
              </div>
-
-
+      
+            
+    
 
 </div>
-
+<br><br>
+<div style="text-align: center;">
+<pagination-controls (pageChange)="pageActual = $event" ></pagination-controls>
+</div>
+<br><br>
 
