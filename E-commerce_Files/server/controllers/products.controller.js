@@ -13,11 +13,11 @@ const Category = require('../models/category');
 
 
 
-
 ProductController.searchAll = async (req, res) => {
   const { id } = req.params; //Formato: Pdf.
+  var query = req.params ;
   //const products = await Product.find({ description: id } );
-const products = await Product.find({ product:/id/ });     // ===========> LIKE
+const products = await Product.find( { product: /id/ } );     // ===========> LIKE
   res.json(products );
 };
 
