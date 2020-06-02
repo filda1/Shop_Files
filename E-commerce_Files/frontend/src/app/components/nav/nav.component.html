@@ -1,3 +1,72 @@
+
+<style>
+
+.main-section{
+	background-color: #F8F8F8;
+	margin-top:50px;
+}
+.dropdown{
+	float:right;
+	padding-right:0px;
+}
+.btn1{
+	border:0px;
+	margin:10px 0px;
+	box-shadow:none !important; 
+}
+.dropdown .dropdown-menu{
+	padding:20px;
+	top:30px !important;
+	width:350px !important;
+	left:-266px !important;
+	box-shadow:0px 5px 30px black;
+}
+.total-header-section{
+	border-bottom:1px solid #d2d2d2;
+}
+.total-section p{
+	margin-bottom:20px;
+}
+.cart-detail{
+	padding:15px 0px;
+}
+.cart-detail-img img{
+	width:100%;
+	height:100%;
+	padding-left:15px;
+}
+.cart-detail-product p{
+	margin:0px;
+	color:#000;
+	font-weight:500;
+}
+.cart-detail .price{
+	font-size:12px;
+	margin-right:10px;
+	font-weight:500;
+}
+.cart-detail .count{
+	color:#C2C2DC;
+}
+.checkout{
+	border-top:1px solid #d2d2d2;	
+	padding-top: 15px;
+}
+.checkout .btn-primary{
+	border-radius:50px;
+	height:50px;
+}
+.dropdown-menu:before{
+  content: " ";
+  position:absolute;
+  top:-20px;
+  right:50px;
+  border:10px solid transparent;
+  border-bottom-color:#fff; 
+}
+</style>
+
+
 <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#007fff;color:white" >
   <div class="container" >
     <a class="navbar-brand" routerLink="/" style="color:#ffff">NG SimpleAuth</a>
@@ -36,21 +105,81 @@
 </div>
       <ul class="navbar-nav ml-auto">
       <a class="nav-link" routerLink="/product" routerLinkActive="active" ><span class="fa fa-heart" style='font-size:17px;color:white'></span></a>
-      <a class="nav-link" routerLink="/cart" routerLinkActive="active" ><span class="fa fa-shopping-cart" style='font-size:17px;color:white'></span></a>
+      
+     
+     <!--  <a class="nav-link" routerLink="/cart" routerLinkActive="active" ><span class="fa fa-shopping-cart" style='font-size:17px;color:white'></span></a> -->   
+      <li class="">
+     
+				<div class="dropdown">
+				    <button type="button" class="btn btn" data-toggle="dropdown" style="background-color:#007fff;color:#ffff;">
+				     <i class="fa fa-shopping-cart" style="font-size:17px;" aria-hidden="true"></i> <span style="font-size:14px"> Cart</span>&nbsp;<span class="badge badge-pill badge-danger">3</span>
+				    </button>
+				    <div class="dropdown-menu">
+				    	<div class="row total-header-section">
+			      			<div class="col-lg-6 col-sm-6 col-6">
+			      				<i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger">3</span>
+			      			</div>
+			      			<div class="col-lg-6 col-sm-6 col-6 total-section text-right">
+			      				<p>Total: <span class="text-info">$2,978.24</span></p>
+			      			</div>
+				    	</div>
+				    	<div class="row cart-detail">
+		    				<div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+		    					<img src="https://images-na.ssl-images-amazon.com/images/I/811OyrCd5hL._SX425_.jpg">
+		    				</div>
+		    				<div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+		    					<p>Sony DSC-RX100M..</p>
+		    					<span class="price text-info"> $250.22</span> <span class="count"> Quantity:01</span>
+		    				</div>
+				    	</div>
+				    	<div class="row cart-detail">
+		    				<div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+		    					<img src="https://cdn2.gsmarena.com/vv/pics/blu/blu-vivo-48-1.jpg">
+		    				</div>
+		    				<div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+		    					<p>Vivo DSC-RX100M..</p>
+		    					<span class="price text-info"> $500.40</span> <span class="count"> Quantity:01</span>
+		    				</div>
+				    	</div>
+				    	<div class="row cart-detail">
+		    				<div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+		    					<img src="https://static.toiimg.com/thumb/msid-55980052,width-640,resizemode-4/55980052.jpg">
+		    				</div>
+		    				<div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+		    					<p>Lenovo DSC-RX100M..</p>
+		    					<span class="price text-info"> $445.78</span> <span class="count"> Quantity:01</span>
+		    				</div>
+				    	</div>
+              
+				    	<div class="row" >
+				    		<div class="col-lg-12 col-sm-12 col-12 text-center">
+				    			<button class="btn btn-primary btn-block" style="border-radius:50px;">Checkout</button>
+                  <button class="btn btn-primary btn-block" style="border-radius:50px;">Cart details</button>
+                  <button class="btn btn-primary btn-block" style="border-radius:50px;">All clean</button>
+				    		</div>
+				    	</div>
+				    </div>
+             
+				</div>
+	
+    </li>
+        
         <ng-container *ngIf="!userService.loggedIn(); else loggedIn">
-          <li class="nav-item">
+          <li class="nav-item" style="padding-top:3px">
             <a class="nav-link" routerLink="/login" routerLinkActive="active" style="color:#ffff" >SignIn</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" style="padding-top:3px">
             <a class="nav-link" routerLink="/register" routerLinkActive="active" style="color:#ffff">SignUp</a>
           </li>
         </ng-container>
         <ng-template #loggedIn>
-          <li class="nav-item">
+          <li class="nav-item" style="padding-top:3px">
             <a class="nav-link" (click)="userService.logout()" style="color:#ffff;cursor: pointer;">Logout</a>
           </li>
         </ng-template>
       </ul>
     </div>
   </div>
+
+  
 </nav>
