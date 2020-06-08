@@ -32,13 +32,14 @@ import {UserService} from './services/user.service';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from './auth.guard';
 import { FormsModule } from '@angular/forms'
-
 import { TokenInterceptor1Service } from './services/token-interceptor1.service';
 import { HeadadminComponent } from './components/headadmin/headadmin.component';
 import { FilterPipe } from './filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchproductsComponent } from './components/product/searchproducts/searchproducts.component';
-
+import { ProductItemComponent } from './components/product/product-item/product-item/product-item.component';
+import { FeatureItemComponent } from './components/feature/feature-item/feature-item.component';
+import { CartItemComponent } from './components/nav/cart-item/cart-item.component';
 
 
 @NgModule({
@@ -66,6 +67,11 @@ import { SearchproductsComponent } from './components/product/searchproducts/sea
     HeadadminComponent,
     FilterPipe,
     SearchproductsComponent,
+    ProductItemComponent,
+    FeatureItemComponent,
+    CartItemComponent,
+  
+  
 
    
     

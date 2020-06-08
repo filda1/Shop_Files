@@ -193,68 +193,16 @@
      </div>
       
 
-  <!--Card 1-->
-     <div class="col-md-3" style="padding-bottom:18px" *ngFor="let product of products | filter:filterPost | paginate: {itemsPerPage: 16, currentPage: pageActual}">
-         <div class="card" style="height: 341px;">
-          <div class="product">
-                    <div>
-                    
-                    <label style="color:Gray;padding-left: 4%;padding-top:0px">
-                    <a style="cursor: pointer;font-size:14px">
-                    <span>{{ product.product}} , 35€</span> 
-                    <!--  <span style="visibility:hidden">{{ product.product}} , 35€</span>  -->        
-                     </a>
-                    </label>
-                   
-                    </div>
-				  <div class="product_image">
-                         <a style="cursor: pointer;">
-                           <img [src]="'http://localhost:3000'+ product.path" alt=""  width="300px">
-                         </a>
-                      </div>					
-				 </div>
-                      <div class="row">
-                              <div class="col">
-                                     <div class="col">                      
-                                      <div class="row">
-                                           <div class="col">
-                                           <div style="text-align:center;padding-bottom: 15%;">
-                                            <a style="cursor: pointer;">
-                                            <img src="assets/images/heart4.png" alt=""  height="20px"> 
-                                            <!-- <span style="font-size:11px">&nbsp;&nbsp;234</span>-->
 
-                                             </a>
-                                           </div>
-                                           </div>
-                                            <div class="col">
-                                                 <div style="text-align:center;padding-bottom: 15%;">
-                                                 <a style="cursor: pointer;">
-                                                   <img src="assets/images/chat.png" alt=""  height="20px">
-                                                   <!-- <span style="font-size:11px">&nbsp;&nbsp;234</span>-->
-                                                  </a>
-                                                 </div>
-                                           </div>
-                                           <div class="col">
-                                               <div style="text-align:center; padding-bottom: 15%;">
-                                               <a style="cursor: pointer;">
-                                                <img src="assets/images/supermarket.png" alt=""  height="20px" width="22px">
-                                               
-                                               </a>
-                                               </div>
-                                           </div>
-                                            
-                                         </div>       
-                                 </div>
-                                <div>
-                                </div>
-                                
-                           </div>
-                      </div>                                    
-                  </div>
+
+      <!--Card 1-->
+     <div class="col-md-3" style="padding-bottom:18px" *ngFor="let product of products | filter:filterPost | paginate: {itemsPerPage: 16, currentPage: pageActual}">
+
+      <app-feature-item [productItem]="product" ></app-feature-item>
              </div>
+
       
-            
-    
+           
 
 </div>
 <br><br>
