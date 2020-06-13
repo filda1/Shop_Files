@@ -198,8 +198,9 @@
       <!--Card 1-->
      <div class="col-md-3" style="padding-bottom:18px" *ngFor="let product of products | filter:filterPost | paginate: {itemsPerPage: 16, currentPage: pageActual}">
 
-      <app-feature-item [productItem]="product" ></app-feature-item>
-             </div>
+          <app-feature-item  [productItem]="product" ></app-feature-item>
+             
+      </div>
 
       
            

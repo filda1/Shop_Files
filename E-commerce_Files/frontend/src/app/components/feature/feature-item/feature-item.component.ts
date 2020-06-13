@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, HostListener, } from '@angular/core';
 import { Product } from 'src/app/models/product'
 import { MessengerService } from 'src/app/services/messenger.service'
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-feature-item',
@@ -15,7 +16,7 @@ export class FeatureItemComponent implements OnInit {
   @Input() productItem: Product
   @ViewChild('panel', { read: ElementRef }) public panel: ElementRef<any>;
 
-  constructor(private msg: MessengerService,) { }
+  constructor(private msg: MessengerService,private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -27,7 +28,9 @@ export class FeatureItemComponent implements OnInit {
   }*/
 
   handleAddToCart() {
-    
+
+      this.toastr.success("Success, when adding to the cart")
+
       this.msg.sendMsg(this.productItem);
 
       window.scroll({ 

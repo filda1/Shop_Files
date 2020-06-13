@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~9.1.1",
+    "@angular/animations": "^9.1.11",
     "@angular/cdk": "^9.2.1",
     "@angular/common": "~9.1.1",
     "@angular/compiler": "~9.1.1",
@@ -28,6 +28,7 @@
     "jquery": "^3.5.0",
     "ng-mat-search-bar": "^9.0.0",
     "ngx-pagination": "^5.0.0",
+    "ngx-toastr": "^12.1.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

@@ -42,6 +42,10 @@ import { FeatureItemComponent } from './components/feature/feature-item/feature-
 import { CartItemComponent } from './components/nav/cart-item/cart-item.component';
 
 
+import { ToastrModule } from 'ngx-toastr';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,6 +90,7 @@ import { CartItemComponent } from './components/nav/cart-item/cart-item.componen
     ReactiveFormsModule,  
     HttpClientModule, 
     NgxPaginationModule , 
+    ToastrModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [

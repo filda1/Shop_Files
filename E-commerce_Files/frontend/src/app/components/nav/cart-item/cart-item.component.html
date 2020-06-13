@@ -57,16 +57,26 @@
 }
 </style>
 				    	
-				    	<div class="row cart-detail">
+				    	<div class="row cart-detail" *ngIf="cartItem !== 0;" [style.visibility]="isDivVisible ? 'visible' : 'hidden'">
 		    				<div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
 		    					<img [src]="'http://localhost:3000'+ cartItem.image">
 		    				</div>
+							
 		    				<div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
 		    					<p>{{ cartItem.productName }}..</p>
-		    					<span class="price text-info"> {{ (cartItem.qty * cartItem.price) | currency:'EUR' }}</span> <span class="count">{{ cartItem.qty }}</span>
-		    				</div>
+
+
+		    					<span class="price text-info"> {{ (cartItem.qty * cartItem.price) | currency:'EUR' }}</span>
+								  <input class="count" #inputQty type="number" (change) = "changeQty(inputQty.value)"  value="{{ cartItem.qty }}" min="1" max="1000" step="1" style="width:40px;height:18px;border-color:light;border-radius:3px;border: 2px solid;"/>
+                                &nbsp;&nbsp;<i class="fa fa-trash" aria-hidden="true" (click)="onDelete(indice,cartItem)" style="cursor: pointer;"></i>
+							</div>
 				    	</div>
+
+						
 				    	
+						 <ng-template #notdisplay>
+     
+                        </ng-template>
               
 				    	
 				    
