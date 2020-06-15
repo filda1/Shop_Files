@@ -5,6 +5,7 @@ import { CartItem } from 'src/app/models/cart-item';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { MessengerService } from 'src/app/services/messenger.service'
+import { LocalstorageService } from 'src/app/services/localstorage.service'
  
 //Para services en View
 @Injectable({
@@ -32,14 +33,22 @@ export class NavComponent implements OnInit {
   variable:any;
   
 
-  constructor(private _router:Router,public userService: UserService, private msg: MessengerService,) { }
+  constructor(private _router:Router,public userService: UserService, private msg: MessengerService,
+    private localS:LocalstorageService ) { }
 
   
 
   ngOnInit(): void {
     this.handleSubscription();
     //this.loadCartItems();
+    this.loadItems()
     
+  }
+
+  loadItems(){
+    let item = this.localS.getLocalStorage('items');
+    this.items = parseInt(item)
+    console.log(this.items)
   }
 
   moveToLogin(){
@@ -62,8 +71,11 @@ export class NavComponent implements OnInit {
     let totalItems = 0
     for (let i in this.cartItems) {  
 
-      totalItems = totalItems + this.cartItems[i].qty;
+      totalItems = totalItems + parseInt(this.cartItems[i].qty);
       this.items = totalItems
+
+      //localStorage
+      this.localS.setLocalStorage('items', this.items)
     } 
   }
 
@@ -163,6 +175,11 @@ export class NavComponent implements OnInit {
 
         // Actualizo el números de items del carro, al modificar Qty del producto en Cart
           this.numCarItems();
+
+          /*this.items = 0 
+          this.cartItems.forEach(item => {
+            this.items += parseInt(item.qty )
+          })*/
 
         // Actulizo el total de carro, al modificar un cartItem
          this.calcCartTotal()

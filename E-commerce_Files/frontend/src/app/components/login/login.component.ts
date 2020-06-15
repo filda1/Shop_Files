@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute  } from '@angular/router';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { UserService } from '../../services/user.service';
 })
 export class LoginComponent implements OnInit {
 
+  returnUrl: string;
   user = {email:'',password:''};
 
   /*loginForm : FormGroup=new FormGroup({
@@ -17,9 +18,12 @@ export class LoginComponent implements OnInit {
     password:new FormControl(null, Validators.required)
   });*/
 
-  constructor(private _router:Router, private _user:UserService) { }
+  constructor(private _router:Router, private _user:UserService, private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
+
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   moveToRegister(){
@@ -34,7 +38,8 @@ export class LoginComponent implements OnInit {
         console.log(res);
         localStorage.setItem('token', res.token);
         //setToken(res.token);
-        this._router.navigate(['/home']);
+        //this._router.navigate(['/home']);
+        this._router.navigateByUrl(this.returnUrl);
       },
       err => console.log(err)
     )
