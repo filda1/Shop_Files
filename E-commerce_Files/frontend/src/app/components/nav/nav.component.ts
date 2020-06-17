@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
 import { Product } from 'src/app/models/product';
 import { CartItem } from 'src/app/models/cart-item';
 import { Router } from '@angular/router';
@@ -23,32 +23,64 @@ import { LocalstorageService } from 'src/app/services/localstorage.service'
 
 export class NavComponent implements OnInit {
 
+  @Input() ItemsCart: any
   cartItems = [];
   CleancartItems = [];
 
   items = 0;
+  items2:number
   cartTotal = 0;
   varUrl ='';
 
   variable:any;
   
+  
 
   constructor(private _router:Router,public userService: UserService, private msg: MessengerService,
-    private localS:LocalstorageService ) { }
+    private localS:LocalstorageService 
+    ) { }
 
   
 
   ngOnInit(): void {
+
     this.handleSubscription();
-    //this.loadCartItems();
+  
     this.loadItems()
     
   }
 
+
+
+  cleanAllCart() {
+    this.localS.deleteLocalStorage('items');
+    this.localS.deleteLocalStorage('cartTotal');
+    this.localS.deleteLocalStorage('cartItems');
+    location.reload();
+  }
+
   loadItems(){
     let item = this.localS.getLocalStorage('items');
+    let cartTotal = this.localS.getLocalStorage('cartTotal');
+    let cartItems = this.localS.getLocalStorage('cartItems');
     this.items = parseInt(item)
-    console.log(this.items)
+
+     if ( item ) {
+
+      this.items = parseInt(item)
+      this.cartTotal = parseInt(cartTotal)
+      this.cartItems = JSON.parse(cartItems)
+
+      console.log(this.items)
+     }
+
+     else {
+
+      this.items = 0
+      this.cartTotal = 0;
+  
+
+     }
   }
 
   moveToLogin(){
@@ -106,7 +138,12 @@ export class NavComponent implements OnInit {
         price:product.price,
         image:product.path,
       })
+
+     
     }
+
+     //localStorage
+     this.localS.setLocalStorage('cartItems', this.cartItems)
 
     this.numCarItems();
     this.calcCartTotal();
@@ -226,7 +263,8 @@ export class NavComponent implements OnInit {
       this.cartTotal += (item.qty * item.price)
     })
    
-
+    //localStorage
+    this.localS.setLocalStorage('cartTotal', this.cartTotal)
   }
 
 }

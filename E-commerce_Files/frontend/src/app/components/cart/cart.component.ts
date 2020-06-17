@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
+  @Output() cambiox = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+
+    //this.cambiox.emit('Ola')
   }
 
 }
