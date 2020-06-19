@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef, HostListener, } from '
 import { Product } from 'src/app/models/product'
 import { MessengerService } from 'src/app/services/messenger.service'
 import { ToastrService } from 'ngx-toastr';
+import { baseUrl } from '../../../config/urls';
 
 @Component({
   selector: 'app-feature-item',
@@ -12,6 +13,8 @@ export class FeatureItemComponent implements OnInit {
 
   isShow: boolean;
   topPosToStartShowing = 100;
+
+  baseUrl:string = baseUrl
 
   @Input() productItem: Product
   @ViewChild('panel', { read: ElementRef }) public panel: ElementRef<any>;

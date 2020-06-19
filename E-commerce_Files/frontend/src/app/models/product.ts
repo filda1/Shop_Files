@@ -1,5 +1,5 @@
 export class Product {
-    id: number;
+    _id: number;
     product: string;
     description: string;
     slug:string;
@@ -16,7 +16,7 @@ export class Product {
   
     constructor(id, product, description = '', slug = '', details = '', price = 0, imageUrl = '', 
     featured = false, category_id = 1, active= true, views = 1, likes = 1, comment_id = 1, path = '' ) {
-      this.id = id
+      this._id = id
       this.product = product
       this.description = description
       this.slug = slug

@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
-
+import { userUrl } from '../config/urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private token: string
-  private URL = 'http://localhost:3000/api';
 
   headers= new Headers();
 
@@ -17,7 +16,7 @@ export class UserService {
   
 
  login(user:any) {
-    return this._http.post<any>(this.URL + '/user/login', user,
+    return this._http.post<any>( userUrl + '/login', user,
     { 
      // headers:new HttpHeaders().append('Authorization','Bearer + nnnnnnnnnnnnnnnnn'),
     }
@@ -26,7 +25,7 @@ export class UserService {
   }
 
   register(user:any) {
-    return this._http.post<any>(this.URL + '/user/register', user);
+    return this._http.post<any>( userUrl + '/register', user);
   }
 
   /*register(body:any){

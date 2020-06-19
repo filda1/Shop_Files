@@ -21,6 +21,15 @@
 	left:-266px !important;
 	box-shadow:0px 5px 30px black;
 }
+
+.dropdown1 .dropdown-menu{
+	padding:20px;
+	top:30px !important;
+	width:50px !important;
+	left:-86px !important;
+	box-shadow:0px 5px 30px black;
+}
+
 .total-header-section{
 	border-bottom:1px solid #d2d2d2;
 }
@@ -88,9 +97,9 @@
 		<div class="col-lg-12">
 	<div class="row" >
 	    <div class="col-12" >
-    	    <div id="custom-search-input" style="padding-left:38px;padding-right:23px">
+    	    <div id="custom-search-input" style="padding-left:44px;padding-right:33px">
                 <div class="input-group">
-                    <input type="text" class="search-query form-control"  name="varUrl" [(ngModel)]="varUrl" placeholder="Search Item" style="background-color:#044ffc;border:0;color:white"/>
+                    <input type="text" class="search-query form-control"  name="varUrl" [(ngModel)]="varUrl" placeholder="Search Item" style="background-color:#044ffc;border:0;color:white;width:620px"/>
                     <span class="input-group-btn">
                         <button type="button"  routerLink="/searchproducts/{{ varUrl }}" routerLinkActive="active">
                             <span class="fa fa-search"></span>
@@ -104,7 +113,7 @@
 	</div>
 </div>
       <ul class="navbar-nav ml-auto">
-      <a class="nav-link" routerLink="/product" routerLinkActive="active" ><span class="fa fa-heart" style='font-size:17px;color:white'></span></a>
+      <a class="nav-link" routerLink="/product" routerLinkActive="active" ><span class="fa fa-heart" style='font-size:15px;color:white'></span></a>
       
      
      <!--  <a class="nav-link" routerLink="/cart" routerLinkActive="active" ><span class="fa fa-shopping-cart" style='font-size:17px;color:white'></span></a> -->   
@@ -160,13 +169,47 @@
           </li>
         </ng-container>
         <ng-template #loggedIn>
+            <li class="nav-item" style="padding-top:3px">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active" style="color:#ffff"><i class="fa fa-home" style="font-size:18px;"></i></a>
+          </li>
           <li class="nav-item" style="padding-top:3px">
-            <a class="nav-link" (click)="userService.logout()" style="color:#ffff;cursor: pointer;">Logout</a>
+            <a class="nav-link" (click)="userService.logout()" style="color:#ffff;cursor: pointer;"><i class="fa fa-power-off" aria-hidden="true" style="font-size:16px;color:#4ae54a"></i></a>
           </li>
         </ng-template>
+        
+           <li class="nav-item" style="padding-top:3px">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active" style="color:#ffff" >  </a>
+          </li>
+        
+        
+          
+
+  <li class="nav-item" style="padding-top:3px">
+  <div class="dropdown1">
+    <button class="btn btn" type="button" data-toggle="dropdown" style="background-color:#007fff;color:#ffff;">
+    <i class= "fa fa-ellipsis-v" style="font-size:17px;" aria-hidden="true"></i> <span style="font-size:14px;position: relative;">&nbsp; </span></button>
+    
+
+   <div  style="width:12px">
+    <ul class="dropdown-menu" style="width:12px">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+      <li class="divider"></li>
+      <li><a href="#">About Us</a></li>
+    </ul>
+    </div>
+  </div>
+</li>
       </ul>
     </div>
   </div>
+
+
+
+				
+	
+    
 
   
 </nav>

@@ -1,73 +1,16 @@
-<style>
 
-.dropdown{
-	float:right;
-	padding-right:0px;
-}
-
-.dropdown .dropdown-menu{
-	padding:20px;
-	top:30px !important;
-	width:350px !important;
-	left:-266px !important;
-	box-shadow:0px 5px 30px black;
-}
-.total-header-section{
-	border-bottom:1px solid #d2d2d2;
-}
-.total-section p{
-	margin-bottom:20px;
-}
-.cart-detail{
-	padding:15px 0px;
-}
-.cart-detail-img img{
-	width:100%;
-	height:100%;
-	padding-left:15px;
-}
-.cart-detail-product p{
-	margin:0px;
-	color:#000;
-	font-weight:500;
-}
-.cart-detail .price{
-	font-size:12px;
-	margin-right:10px;
-	font-weight:500;
-}
-.cart-detail .count{
-	color:#C2C2DC;
-}
-.checkout{
-	border-top:1px solid #d2d2d2;	
-	padding-top: 15px;
-}
-.checkout .btn-primary{
-	border-radius:50px;
-	height:50px;
-}
-.dropdown-menu:before{
-  content: " ";
-  position:absolute;
-  top:-20px;
-  right:50px;
-  border:10px solid transparent;
-  border-bottom-color:#fff; 
-}
-</style>
 				    	
 				    	<div class="row cart-detail" *ngIf="cartItem !== 0;" [style.visibility]="isDivVisible ? 'visible' : 'hidden'">
 		    				<div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-		    					<img [src]="'http://localhost:3000'+ cartItem.image">
+		    					<img [src]=" baseUrl + cartItem.image">
 		    				</div>
 							
 		    				<div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
 		    					<p>{{ cartItem.productName }}..</p>
 
 
-		    					<span class="price text-info"> {{ (cartItem.qty * cartItem.price) | currency:'EUR' }}</span>
-								  <input class="count" #inputQty type="number" (change) = "changeQty(inputQty.value)"  value="{{ cartItem.qty }}" min="1" max="1000" step="1" style="width:40px;height:18px;border-color:light;border-radius:3px;border: 2px solid;"/>
+		    					<span class="price text-info"> {{ ( cartItem.price * cartItem.qty) | currency:'EUR' }}</span>
+								  <input class="count" #inputQty type="number" (change) = "changeQty(inputQty.value )"  value="{{ cartItem.qty }}" min="1" max="1000" step="1" style="width:40px;height:18px;border-color:light;border-radius:3px;border: 2px solid;"/>
                                 &nbsp;&nbsp;<i class="fa fa-trash" aria-hidden="true" (click)="onDelete(indice,cartItem)" style="cursor: pointer;"></i>
 							</div>
 				    	</div>

@@ -12,7 +12,10 @@
                     </div>
 				  <div class="product_image">
                          <a style="cursor: pointer;">
-                           <img [src]="'http://localhost:3000'+ productItem.path" alt=""  width="300px">
+                           
+                           <!-- <img [src]="'http://localhost:3000'+ productItem.path" alt=""  width="300px"> -->
+                           <img [src]=" baseUrl + productItem.path" alt=""  width="300px">
+                           
                          </a>
                       </div>					
 				 </div>

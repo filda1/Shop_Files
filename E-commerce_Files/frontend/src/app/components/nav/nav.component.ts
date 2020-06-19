@@ -26,6 +26,7 @@ export class NavComponent implements OnInit {
   @Input() ItemsCart: any
   cartItems = [];
   CleancartItems = [];
+  
 
   items = 0;
   items2:number
@@ -118,21 +119,25 @@ export class NavComponent implements OnInit {
      // Producto Repetido en cart
      for (let i in this.cartItems) {  
 
-        if( this.cartItems[i].image === product.path ){ 
+        if( this.cartItems[i].id === product._id ){ 
 
           this.cartItems[i].qty++;
+          this.cartItems[i].price = this.cartItems[i].price * this.cartItems[i].qty;
           this.cartTotal = this.cartTotal + this.cartItems[i].price
 
           productExists = true
           break;
+
+        
         } 
+      
     } 
 
     // Nuevo Producto en Cart
     if (!productExists){ 
 
       this.cartItems.push ({ 
-        productId: product.id,
+        id: product._id,
         productName: product.product,
         qty: 1,
         price:product.price,
@@ -140,13 +145,18 @@ export class NavComponent implements OnInit {
       })
 
      
+     
     }
-
-     //localStorage
-     this.localS.setLocalStorage('cartItems', this.cartItems)
+    
+      //localStorage
+      this.localS.deleteLocalStorage('cartItems')
+      //localStorage
+      this.localS.setLocalStorage('cartItems', this.cartItems)
 
     this.numCarItems();
     this.calcCartTotal();
+
+     
 
     //this.cartItems = this.cartItems.filter(({ image }) => image !== product.path);
       /*if (this.cartItems.length === 0){ 
@@ -194,7 +204,7 @@ export class NavComponent implements OnInit {
 }
 
 
-   loadCartItems() {
+  loadCartItems() {
     //this.cartService.getCartItems().subscribe((items: CartItem[]) => {
      // this.cartItems = items;
       this.calcCartTotal();
@@ -203,13 +213,23 @@ export class NavComponent implements OnInit {
 
   updateQtyCartItem(e){
    
+     
+
     for (let i in this.cartItems) {  
 
-      if( this.cartItems[i].image === e.image ){ 
+      if( this.cartItems[i].id === e.id ){ 
 
-        // Ja Actualizo el precio del Producto, al modificar Qty del producto en Cart, en cart-item.ts
-  
+         let qty= e.qty
+         let price = e.price
+        // Actulizo el cambio de cantidad de CartItem
+          this.cartItems[i].qty = e.qty
 
+        // Actualizo el cambio de precio por causa de Qty
+          this.cartItems[i]. price =  e.price 
+
+
+          
+    
         // Actualizo el números de items del carro, al modificar Qty del producto en Cart
           this.numCarItems();
 
@@ -217,13 +237,24 @@ export class NavComponent implements OnInit {
           this.cartItems.forEach(item => {
             this.items += parseInt(item.qty )
           })*/
+           
 
         // Actulizo el total de carro, al modificar un cartItem
-         this.calcCartTotal()
+          this.calcCartTotal()
   
-       // la Qty ya esta actulizada en archivo anterior cart-item.ts
-        break;
+         // la Qty ya esta actulizada en archivo anterior cart-item.ts
+          
+
+         // console.log(this.cartItems)
+         
+          //localStorage
+       this.localS.deleteLocalStorage('cartItems')
+       //localStorage
+       this.localS.setLocalStorage('cartItems', this.cartItems)
       } 
+
+      
+       
     }
    
 
@@ -236,7 +267,7 @@ export class NavComponent implements OnInit {
     
     for (let i in this.cartItems) {  
 
-      if( this.cartItems[i].image === this.variable.image ){ 
+      if( this.cartItems[i].id === this.variable.id ){ 
 
        index = i
         break;
@@ -250,7 +281,10 @@ export class NavComponent implements OnInit {
 
       // Elimino/Actulizo la cantidad de productos o items, al ver eliminado un item
        this.cartItems  = this.cartItems.filter(x => x!= this.cartItems[index])
-      
+
+        if (this.cartItems.length == 0) { 
+         this.cleanAllCart()
+        } 
     }
 
 
@@ -260,7 +294,7 @@ export class NavComponent implements OnInit {
 
     this.cartTotal = 0
     this.cartItems.forEach(item => {
-      this.cartTotal += (item.qty * item.price)
+      this.cartTotal +=  (item.qty * item.price)
     })
    
     //localStorage

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { baseUrl } from '../../../config/urls';
 
 @Component({
   selector: 'app-cart-item',
@@ -11,8 +12,11 @@ export class CartItemComponent implements OnInit {
   @Input() indice: any
   @Input() todoCartItems: any
 
+  baseUrl:string = baseUrl
+
   @Output() cambio = new EventEmitter();
   @Output() cambioQty = new EventEmitter();
+
 
   //value="{{  }}"
    //qty:number = this.cartItem.qty;
@@ -25,6 +29,7 @@ export class CartItemComponent implements OnInit {
   ngOnInit(): void {
 
     //console.log(this.todoCartItems)
+  
   }
 
 
@@ -33,10 +38,12 @@ export class CartItemComponent implements OnInit {
     // Actulizo el cambio de cantidad de CartItem
     this.cartItem.qty = value
     // Actualizo el cambio de precio por causa de Qty
-    this.cartItem. price = this.cartItem. price 
-
+    //this.cartItem. price = this.cartItem. price * parseInt(value)
+ 
     this.cambioQty.emit(this.cartItem)
   }
+
+
 
   onDelete(i:number, cartSelected:any)
   {
