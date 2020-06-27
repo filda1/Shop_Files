@@ -56,6 +56,7 @@ export class UserService {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('email');
     this.router.navigate(['/']);
   }
 

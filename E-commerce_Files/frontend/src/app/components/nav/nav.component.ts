@@ -60,6 +60,7 @@ export class NavComponent implements OnInit {
     location.reload();
   }
 
+
   loadItems(){
     let item = this.localS.getLocalStorage('items');
     let cartTotal = this.localS.getLocalStorage('cartTotal');
@@ -84,13 +85,16 @@ export class NavComponent implements OnInit {
      }
   }
 
+
   moveToLogin(){
     this._router.navigate(['/login']);
   }
 
+
   moveToRegister(){
     this._router.navigate(['/register']);
   }
+
 
   handleSubscription() {
     this.msg.getMsg().subscribe((product: Product) => {
@@ -99,6 +103,7 @@ export class NavComponent implements OnInit {
     })
   }
   
+
   numCarItems (){
    
     let totalItems = 0
@@ -111,6 +116,7 @@ export class NavComponent implements OnInit {
       this.localS.setLocalStorage('items', this.items)
     } 
   }
+
 
   addCartItems(product: Product) {
 
@@ -211,6 +217,7 @@ export class NavComponent implements OnInit {
     //})
   }
 
+
   updateQtyCartItem(e){
    
      
@@ -252,13 +259,10 @@ export class NavComponent implements OnInit {
        //localStorage
        this.localS.setLocalStorage('cartItems', this.cartItems)
       } 
-
-      
-       
     }
-   
-
   }
+
+
 
   deleteCartItem(e){
 
@@ -288,6 +292,7 @@ export class NavComponent implements OnInit {
     }
 
 
+    
 
   calcCartTotal() {
 

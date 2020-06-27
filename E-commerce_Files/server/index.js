@@ -11,6 +11,7 @@ const cookieParser = require('cookie-parser');
 const multer = require('multer');
 //const uuid = require('uuid/v4');
 const { v4: uuid_v4 } = require('uuid');
+var bodyParser = require('body-parser');
 
 const { mongoose } = require('./database');
 
@@ -30,8 +31,15 @@ app.engine('.hbs', exphbs({
 
 app.set('view engine', '.hbs');
 
+
+
 ///////////////////////////////////////////////// Middlewares ////////////////////////////////////////////////////////////////
-app.use(express.urlencoded({extended: false}));
+//app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
 app.use(methodOverride('_method'));
 app.use(session({
   secret: 'secret',
@@ -62,7 +70,9 @@ app.use((req, res, next) => {
  });
 ////////////////////////////////////////////////////////// cors //////////////////////////////////////////////////////////
 //app.use(morgan('dev'));
-app.use(express.json());
+//app.use(express.json());
+app.use(bodyParser.json());
+
 app.use(cors({origin: 'http://localhost:4200'}));  
 (express.json());
 

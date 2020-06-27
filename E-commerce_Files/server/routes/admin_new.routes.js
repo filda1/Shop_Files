@@ -11,6 +11,7 @@ const HomeController = require('../controllers/home.controller');
 const ProductController = require('../controllers/products.controller');
 const UseradminController = require('../controllers/usersadmin.controller');
 const CategoryController = require('../controllers/category.controller');
+const WishlistController = require('../controllers/wishlist.controller');
 
 /*router.get('/', (req,res) => {
     res.json({
@@ -59,9 +60,11 @@ const CategoryController = require('../controllers/category.controller');
     /////////////////////// Search /////////////////////
     router.get('/searchAll/:id', ProductController.searchAll);
 
-
-
-
+   //////////////////// Favorite /////////////////////////////////
+   router.get('/favorite/products', WishlistController.getFavorite);
+   router.get('/favorite/:id', WishlistController.getFavoriteId);
+   router.post('/favorite', WishlistController.postFavorite);
+   router.delete('/favorite/:id', WishlistController.deleteFavorite);
    
 
 
