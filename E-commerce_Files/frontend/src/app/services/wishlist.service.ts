@@ -12,8 +12,12 @@ export class WishlistService {
   constructor(private _http:HttpClient, private router: Router) { }
   
 
-  getWishlistUser(obj:any) {
+  /*getWishlistUser(obj:any) {
     return this._http.get<any>( generalUrl + '/favorite', obj);
+  }*/
+
+  getWishlistUser(id:any) {
+    return this._http.get<any>( generalUrl + '/favorite/${id}');
   }
 
 

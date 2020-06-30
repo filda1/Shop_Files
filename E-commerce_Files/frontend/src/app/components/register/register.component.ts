@@ -12,7 +12,7 @@ import { UserService } from '../../services/user.service';
 export class RegisterComponent implements OnInit {
 
   user = { email:'', username:'', password:'', cpass:''};
-
+  error:string;
 
   /*registerForm:FormGroup = new FormGroup({
     email:new FormControl(null,[Validators.email,Validators.required]),
@@ -39,7 +39,11 @@ export class RegisterComponent implements OnInit {
           localStorage.setItem('token', res.token);
           this._router.navigate(['/home']);
         },
-        err => console.log(err)
+        //err => console.log(err)
+        err => {
+          console.log(err)
+          this.error = err
+        }
       )
     
       

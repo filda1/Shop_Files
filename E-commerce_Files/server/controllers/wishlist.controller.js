@@ -22,7 +22,7 @@ WishlistController.getFavoriteId = async (req, res, next) => {
   //const products = await  wishlist.find();
   //res.json(products );
   const { id } = req.params;
-  const products = await FavoriteModel.find({ user: id } );
+  const products = await FavoriteModel.find({ email: id } );
   res.json(whishlist);
 
   };

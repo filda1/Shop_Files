@@ -100,6 +100,7 @@ export class FeatureItemComponent implements OnInit {
 
       this.toastr.success("Success, when adding to the cart")
 
+      // envio al objeto general
       this.msg.sendMsg(this.productItem);
 
       window.scroll({ 

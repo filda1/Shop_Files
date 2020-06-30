@@ -4,6 +4,7 @@
 <app-headadmin ></app-headadmin>
 <body class="bg-gradient-primary p-1">
   <div class="container">
+ 
     <div class="card o-hidden border-0 shadow-lg my-5">
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
@@ -14,6 +15,11 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
               </div>
+               <ng-container *ngIf="error">
+                <div class="alert alert-danger" role="alert">
+                   Sorry, some error, it may be that this email already exists/error password
+                </div>
+              </ng-container>
               <form class="user" (submit)="register()">
                     <div class="form-group">
                   <input type="email" [(ngModel)]="user.username" name="username" class="form-control form-control-user" placeholder="Name Lastname">

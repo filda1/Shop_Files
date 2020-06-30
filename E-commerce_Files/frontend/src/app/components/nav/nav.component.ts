@@ -96,6 +96,7 @@ export class NavComponent implements OnInit {
   }
 
 
+  // Obtengo el objeto general
   handleSubscription() {
     this.msg.getMsg().subscribe((product: Product) => {
      // this.loadCartItems();
